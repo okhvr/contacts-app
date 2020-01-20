@@ -1,0 +1,50 @@
+<nav class="navigation mt-md-3 mb-md-3" [routerLink]="isEditable ? '../../home': '../home'">Return to contacts</nav>
+<article>
+    <header class="row mt-md-4">
+      <h2 class="col-10 navigation_header">
+        <div *ngIf="isEditable; then editBlock else addBlock"></div>
+        <ng-template #addBlock>Add contact</ng-template>
+        <ng-template #editBlock>Edit contact</ng-template>
+      </h2>
+      <button (click)="saveContact()" class="col-2 btn button save-button" [disabled]="!editableContact.valid">Save</button>
+    </header>
+
+    <form #editableContact="ngForm" class="mx-auto col-md-6 form-contact">
+      <label class="form-contact_photo">
+        <i class="fas fa-edit"></i>
+        Add photo
+        <input type="file" class="">
+      </label>
+      <div class="form-contact_main">
+        <div>
+          <label>
+            <input type="text" class="" placeholder="First name" required
+              [(ngModel)]="contact.first_name" name="firstName">
+          </label>
+          <label *ngFor="let email of contact.email; let index = index; trackBy: trackByIndex;">
+            <input type="email" class="" placeholder="E-mail" [required]="index === 0"
+              [(ngModel)]="contact.email[index]" name="email{{index}}">
+              <i *ngIf="index !== 0" (click)="removeEmail(index)" class="fas fa-times"></i>
+          </label>
+          <button (click)="addEmail()" class="form-contact_add-email" [hidden]="contact.email.length === maxItemsCount">+ Add email</button>
+        </div>
+        <div>
+          <label>
+            <input type="text" class="" placeholder="Last name" required
+              [(ngModel)]="contact.last_name" name="lastName">
+          </label>
+          <label *ngFor="let phone of contact.phone; let index = index; trackBy: trackByIndex;">
+            <input type="text" class="" placeholder="Phone" [required]="index === 0"
+            [(ngModel)]="contact.phone[index]" name="phone{{index}}">
+            <i *ngIf="index !== 0" (click)="removePhone(index)" class="fas fa-times"></i>
+          </label>
+          <button (click)="addPhone()" class="form-contact_add-number" [hidden]="contact.phone.length === maxItemsCount">+ Add phone number</button>                
+        </div>
+      </div>
+    </form>
+    <button *ngIf="isEditable" (click)="toggleDeleteModal()" class="col-2 btn button delete-button">Delete</button>
+</article>
+
+<app-delete-modal (isDeleted)="closeModalAndDeleteIfNeeded($event)"
+  *ngIf="isDeleteConfirmation"
+></app-delete-modal>

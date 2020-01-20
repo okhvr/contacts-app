@@ -1,0 +1,17 @@
+@import '../../../variables.scss';
+
+.add-button {
+    border-radius: unset;
+    color: $light-background;
+    background-color: $dark;
+    border-color: $dark;
+    position: relative;
+    height: 50px;
+
+    &_icon{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 20px;
+    }
+}

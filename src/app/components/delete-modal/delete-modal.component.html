@@ -1,0 +1,12 @@
+<div class="modal fade show delete-modal" tabindex="-1">
+    <div class="modal-dialog delete-modal_dialog">
+      <div class="modal-content">
+          <h5 class="modal-title delete-modal_title">Delete contact</h5>
+          <p class="delete-modal_message">Are you sure you want to permanently delete contact?</p>
+        <div class="delete-modal_button-block">
+          <button (click)="cancel()" type="button" class="col-5 btn button cancel-button">Cancel</button>
+          <button (click)="delete()" type="button" class="col-5 btn button confirm-button">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>

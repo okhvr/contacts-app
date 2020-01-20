@@ -1,0 +1,22 @@
+<article class="mb-2 mr-2 ml-2 mt-2 contact">
+    <header class="contact_header">
+        <img [src]="contact.photo" [ngClass]="{'contact_photo': true, 'contact_photo-emphasize': !contact.photo}" [alt]="contact.first_name">
+        <div class="contact_name">
+            <h5 class="card-title">{{contact.first_name}}</h5>
+            <h5 class="card-title">{{contact.last_name}}</h5>
+        </div>
+    </header>
+    <h6 class="contact_subheader">E-mail</h6>
+    <p *ngFor="let mail of contact.email" class="contact_item">
+        <i class="far fa-envelope"></i>
+        {{mail}}
+    </p>
+    <h6 class="contact_subheader">Phone</h6>
+    <p *ngFor="let phone of contact.phone" class="contact_item">
+        <i class="fas fa-phone-alt"></i>
+        {{phone}}
+    </p>
+    <footer class="contact_footer">
+        <button class="contact_edit" [routerLink]="['../edit-contact', contact.id]">EDIT</button>
+    </footer>
+</article>

@@ -1,0 +1,86 @@
+@import '../../../variables.scss';
+
+.navigation {
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: underline;
+    cursor: pointer;
+
+    &_header {
+        font-weight: 700;
+    }
+}
+
+.save-button {
+    background-color: $emphasize-color;
+    border-color: $emphasize-color;
+
+    &:disabled {
+        background-color: $inactive;
+        border-color: $inactive;
+    }
+}
+
+.delete-button {
+    background-color: $dark;
+    border-color: $dark;
+    display: block;
+    margin: 3rem auto 0;
+}
+
+article {
+    padding: 0 0 2rem;
+}
+
+.form-contact {
+    &_photo {
+        padding: 2rem 1.5rem;
+        font-size: 16px;
+        font-weight: 500;
+        border: 2px solid $emphasize-color;
+
+        & input {
+            display: none;
+        }
+    }
+
+    &_main {
+        display: flex;
+        justify-content: space-between;
+
+        &>div {
+            width: 98%;
+        }
+
+        & label {
+            position: relative;
+            &>i {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+                right: 0;
+                padding: 0.5rem;
+            }
+
+            &>input {
+                border: 1px solid $dark;
+                border-radius: unset;
+                padding: 0.35rem 0.75rem;
+                margin: 0.5rem 0;
+                font-weight: 500;
+                line-height: 1.5;
+                background-color: $light-background;
+                box-shadow: 0 2px 2px 0 rgba(0,0,0,0.15);
+            }
+        }
+    }
+
+    &_add-number,
+    &_add-email {
+        background-color: inherit;
+        border: none;
+        font-size: 14px;
+    }
+}

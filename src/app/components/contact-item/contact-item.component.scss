@@ -1,0 +1,59 @@
+@import '../../../variables.scss';
+
+.contact {
+    border: none;
+    border-radius: unset;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.15);
+    background-color: $light-background;
+    padding: 1.5rem;
+    height: 95%;
+    position: relative;
+    overflow: hidden;
+
+    &_header {
+        display: flex;
+    }
+
+    &_photo {
+        height: 100px;
+        max-width: 81px;
+        border: 2px solid $dark;
+        object-fit: cover;
+        
+        &-emphasize {
+            border-color: $emphasize-color;
+        }
+    }
+
+    &_name {
+        font-weight: 700;
+        font-size: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    &_subheader {
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1rem;
+        margin: 0.5rem 0;
+    }
+
+    &_item {
+        font-size: 14px;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    &_footer {}
+
+    &_edit {
+        position: absolute;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        background-color: $light-background;
+        border: none;
+    }
+}

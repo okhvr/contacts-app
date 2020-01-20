@@ -1,0 +1,10 @@
+<header class="row mt-md-5 mb-md-4 mr-2 ml-2">
+    <h2 class="col-10 pr-md-0 pl-md-0">Contacts</h2>
+    <button routerLink="../new-contact" class="col-2 btn add-button">
+        <i class="fas fa-plus add-button_icon"></i>
+        Add
+    </button>
+</header>
+<section class="row row-cols-1 row-cols-md-4 mr-md-0 ml-md-0">
+    <app-contact-item class="" *ngFor="let contact of contactList" [contact]="contact"></app-contact-item>
+</section>

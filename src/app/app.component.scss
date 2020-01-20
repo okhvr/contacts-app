@@ -1,0 +1,11 @@
+@import '../variables.scss';
+
+.main {
+    min-height: 100vh;
+    background-color: $main-background;
+}
+
+.header {
+    background-color: $light-background;
+    height: 70px;
+}
